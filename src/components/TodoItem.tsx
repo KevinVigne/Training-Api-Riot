@@ -16,10 +16,10 @@ const TodoItem = ({todo , onDelete, isSelected,onToggleSelect}: Props) => {
                  
             </p>
             
-            <input type="checkbox" className="form-check-input mx-4 col-1" checked={isSelected} onChange={() => onToggleSelect(todo.id)}/>
+            <input type="checkbox" className="form-check-input mx-4 my-3 col-2 " checked={isSelected} onChange={() => onToggleSelect(todo.id)}/>
             
             <button 
-            className='btn btn-outline-danger col-3'
+            className=' btn btn-outline-danger col-2'
             onClick={onDelete}>
                 <i className="fa-regular fa-trash-can"></i>
             </button>

@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useState, useEffect } from "react";
+import { useState, useEffect, type JSX } from "react";
 import type { Champion } from "../types/ChampionType";
 
 export function ChampionList(){
@@ -23,23 +23,23 @@ export function ChampionList(){
         //Lancement de la fonction qui récupère les data de l'api et les initialise 
         getAllChampions();
     }, []);
-        //TO DO Typage de ce tableau d'éléments HTML
-        let champions:Array[] =[] ;
+        //Initialisation d'un tableau contenant toutes les infos des champions
+        let champions:JSX.Element[] =[] ;
         
         championList.forEach((champion)=>{
             champions.push(
-                <div className="card" key={champion.id}>
+                <a href={`/champion/${champion.id}`} className="card py-4 col-10 card-border my-3 mx-5 noStyle" key={champion.id}>
                     <div className="card-body">
-                        <p className="card-title">Nom du Champion : {champion.name}</p>
-                        <p className="card-text">Titre du Champion : {champion.title}</p>
+                        <p className="card-title ">Nom du Champion : <span className="championName d-flex justify-content-center">{champion.name}</span></p>
+                        <p className="card-text">Titre du Champion : <span className="d-flex justify-content-center align-self-start">{champion.title}</span></p>
                         <p className="card-text">Description du Champion : {champion.blurb}</p>
                     </div>
-                </div>
+                </a>
             )
         })
     return (
-        <div >
-            <h1>Liste des Champions</h1>
+        <div className="container-fluid row">
+            <h1 className="d-flex justify-content-center title col-12 py-3">Liste des Champions</h1>
             {champions}
             
         </div>

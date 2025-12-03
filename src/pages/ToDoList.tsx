@@ -85,12 +85,12 @@ function finishedSelected() {
   }
   return (
   <div>
-    <h1>To Do List</h1>
-    <div className=" container-fluid w-100">
-      <div className="container d-flex flex-column justify-content center">
+    <h1 className="title d-flex justify-content-center">Liste des Tâches</h1>
+    <div className=" container-fluid">
+      <div className="container d-flex flex-column justify-content-center">
         <input
         type="text"
-        className="text-info"
+        className="button"
         placeholder="Ajouter une tâche"
         value={input}
         onChange={(e) => setInput(e.target.value)}
@@ -98,41 +98,42 @@ function finishedSelected() {
         <select
           value={priority}
           onChange={(f) => setPriority(f.target.value as Priority)}
+          className="button py-2 my-3"
         >
           <option value="Urgente">Urgente</option>
           <option value="Moyenne">Moyenne</option>
           <option value="Basse">Basse</option>
         </select>
         <Button 
-          className="btn btn-success" 
+          className="btn addButton my-3" 
           onClick={addTodo}
           text = "Ajouter"
           disabled = {falseDisabled}
         />
       </div>
-        <div className="d-flex justify-between">
-          <div className=" my-2">
+        <div className="d-flex  row col-12 flex-row my-3">
+          <div className=" my-2 col">
             <Button 
-              className={`btn btn-primary ${filter === "Tous" ? "btn-info" : " "}`}
+              className={`btn  mx-2 ${filter === "Tous" ? "btn-info" : "button "}`}
               onClick={() => setFilter("Tous")}
               text= {totalButtonText}
               disabled = {falseDisabled}
             />
 
             <Button
-              className={`btn btn-primary  ${filter === "Urgente" ? " btn-danger" : " "}`}
+              className={`btn mx-2  ${filter === "Urgente" ? " btn-danger" : "button "}`}
               onClick={() => setFilter("Urgente")}
               text = {urgentButtonText}
               disabled = {falseDisabled}
             />
             <Button
-              className={`btn btn-primary ${filter === "Moyenne" ? " btn-warning" : " "}`}
+              className={`btn mx-2 ${filter === "Moyenne" ? " btn-warning" : "button "}`}
               onClick={() => setFilter("Moyenne")}
               text={mediumButtonText}
               disabled = {falseDisabled}
             />
             <Button
-              className={`btn btn-primary ${filter === "Basse" ? " btn-success" : " "}`}
+              className={`btn mx-2 ${filter === "Basse" ? " btn-success" : " button"}`}
               onClick={() => setFilter("Basse")}
               text = {lowButtonText}
               disabled = {falseDisabled}
@@ -140,31 +141,31 @@ function finishedSelected() {
 
             </div>
             <Button
-              className="btn btn-primary"
+              className="btn button col-4"
               onClick={finishedSelected}
               text = {finishedSelectionButtonText}
               disabled={selectedTodos.size === 0}
             />
-          </div>
-          {filteredTodos.length > 0 ? (
-              <div>
-                {filteredTodos.map((todo) => (
-                  <div key={todo.id}>
-                    <TodoItem
-                      todo={todo}
-                      isSelected={selectedTodos.has(todo.id)}
-                      onDelete={() => deleteTodo(todo.id)}
-                      onToggleSelect={toggleSelectedTodos}
-                    />
-                  </div>
-                ))}
-              </div>
-
-          ) : (
-            <div className="d-flex justify-center align-center">
-              <p>Aucune Tâche Dans ce Filtre</p>
+        </div>
+        {filteredTodos.length > 0 ? (
+            <div className="d-flex flex-column ">
+              {filteredTodos.map((todo) => (
+                <div key={todo.id} className="text d-flex row justify-content-around ">
+                  <TodoItem
+                    todo={todo}
+                    isSelected={selectedTodos.has(todo.id)}
+                    onDelete={() => deleteTodo(todo.id)}
+                    onToggleSelect={toggleSelectedTodos}
+                  />
+                </div>
+              ))}
             </div>
-          )}
+
+        ) : (
+          <div className="d-flex justify-content-center">
+            <p className="text">Aucune Tâche pour ce Filtre</p>
+          </div>
+        )}
       </div>
       </div>
   )
