@@ -114,26 +114,26 @@ function finishedSelected() {
         <div className="d-flex  row col-12 flex-row my-3">
           <div className=" my-2 col">
             <Button 
-              className={`btn  mx-2 ${filter === "Tous" ? "btn-info" : "button "}`}
+              className={`btn  m-2 ${filter === "Tous" ? "btn-info" : "button "}`}
               onClick={() => setFilter("Tous")}
               text= {totalButtonText}
               disabled = {falseDisabled}
             />
 
             <Button
-              className={`btn mx-2  ${filter === "Urgente" ? " btn-danger" : "button "}`}
+              className={`btn m-2  ${filter === "Urgente" ? " btn-danger" : "button "}`}
               onClick={() => setFilter("Urgente")}
               text = {urgentButtonText}
               disabled = {falseDisabled}
             />
             <Button
-              className={`btn mx-2 ${filter === "Moyenne" ? " btn-warning" : "button "}`}
+              className={`btn m-2 ${filter === "Moyenne" ? " btn-warning" : "button "}`}
               onClick={() => setFilter("Moyenne")}
               text={mediumButtonText}
               disabled = {falseDisabled}
             />
             <Button
-              className={`btn mx-2 ${filter === "Basse" ? " btn-success" : " button"}`}
+              className={`btn m-2 ${filter === "Basse" ? " btn-success" : " button"}`}
               onClick={() => setFilter("Basse")}
               text = {lowButtonText}
               disabled = {falseDisabled}

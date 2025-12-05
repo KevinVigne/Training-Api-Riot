@@ -5,6 +5,8 @@ export type Champion = () =>{
   title: string;
   blurb: string;
   lore:string;
-  passive:Array<string>
+  passive: {
+    name: string;
+    description: string;
+  };
 }
-

@@ -12,6 +12,8 @@
   --card_bg--: #094173;
   --card_text--:#C7B0E2;
   --title_color--:#0D8BD9;
+  --shadow-color--: rgba(199,176,226,0.62);
+  --shadow-hover-color--:rgba(9,65,115,0.62);
 
 
 
@@ -46,18 +48,19 @@ body {
 }
 
 .card{
-  border : 2px solid var(--card_text--); 
   border-radius: 5px;
   display:flex;
   justify-self: center;
   border-color: var(--card_text--) ;
   color: var(--card_text--);
   background-color: var(--card_bg--);
+  box-shadow: 0px 2px 20px 6px var(--shadow-color--);;
 }
 
 .card:hover{
   background-color: var(--card_text--);
   color: var(--card_bg--);
+  box-shadow: 0px 2px 31px 9px var(--shadow-hover-color--);
 }
 
 .title{
