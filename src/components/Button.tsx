@@ -1,5 +1,5 @@
 import type {Button} from "../types/ButtonType" 
-const  Boutton = ({onClick, className, text}:Button) => {
+const  Button = ({onClick, className, text}:Button) => {
     return (
         <button
             onClick={onClick}
@@ -9,4 +9,4 @@ const  Boutton = ({onClick, className, text}:Button) => {
         </button>
     );
 }
-export default Boutton
+export default Button

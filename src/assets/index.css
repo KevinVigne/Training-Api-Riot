@@ -4,16 +4,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --body-color--:#1c041c;
   --header_footer_color-- : #7285F2;
-  --link_bg--: #3F4B8C;
-  --link_bg_hover--:#C7B0E2;
   --link_text--:#C7B0E2;
-  --link_text_hover--:#3F4B8C;
   --card_bg--: #094173;
   --card_text--:#C7B0E2;
   --title_color--:#0D8BD9;
-  --shadow-color--: rgba(199,176,226,0.62);
-  --shadow-hover-color--:rgba(9,65,115,0.62);
+  --shadow_color--: rgba(199,176,226,0.62);
+  --shadow_hover_color--:rgba(9,65,115,0.62);
 
 
 
@@ -25,6 +23,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+.title{
+  color:var(--title_color--);
 }
 
 .link{
@@ -40,11 +42,13 @@ body {
   border-color: var(--card_text--) ;
   color: var(--card_text--);
   background-color: var(--card_bg--);
+  transition-duration: 0.5s;
 }
 
 .button:hover{
-  background-color: var(--card_text--);
-  color: var(--card_bg--);
+  background-color: var(--body_color--);
+  color: var(--card_text--);
+  border-color: var(--card_text--) ;
 }
 
 .card{
@@ -54,23 +58,45 @@ body {
   border-color: var(--card_text--) ;
   color: var(--card_text--);
   background-color: var(--card_bg--);
-  box-shadow: 0px 2px 20px 6px var(--shadow-color--);;
+  box-shadow: 0px 2px 20px 6px var(--shadow_color--);;
+  transition-duration: 0.65s;
 }
 
 .card:hover{
-  background-color: var(--card_text--);
-  color: var(--card_bg--);
-  box-shadow: 0px 2px 31px 9px var(--shadow-hover-color--);
+  background-color: var(--body-color--);
+  color: var(--card_text--);
+  box-shadow: 0px 2px 31px 9px var(--shadow_hover_color--);
+}
+.card-footer{
+  border-top: 1px dashed var(--card_text--);
+}
+.info{
+  border: var(--card_text--) 2px  solid;
+  border-radius: 5px;
+  display:flex;
+  justify-self: center;
+  border-color: var(--card_text--) ;
+  color: var(--card_text--);
+  background-color: var(--body_color--);
+  
 }
 
-.title{
-  color:var(--title_color--);
+.noStyle{
+  text-decoration: none;
+  list-style-type: none;
 }
+.fontUp{
+  font-size: larger;
+}
+
 body{
-  background-color: #1c041c;
+  background-color: var(--body-color--);
 }
 input::placeholder{
   color: var(--card_text--);
+}
+input::placeholder:hover{
+  background-color: var(--body-color--);
 }
 nav a {
   font-weight: 700;
@@ -91,6 +117,7 @@ nav a:hover {
   border-color: var(--card_text--) ;
   color: var(--card_text--);
   background-color: var(--card_bg--);
+  transition:0.5s
 }
 
 .addButton:hover{
@@ -100,10 +127,4 @@ nav a:hover {
 .championName{
   font-size: 25px;
 }
-.noStyle{
-  text-decoration: none;
-  list-style-type: none;
-}
-.fontUp{
-  font-size: larger;
-}
+

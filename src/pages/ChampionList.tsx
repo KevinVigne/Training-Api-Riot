@@ -28,7 +28,7 @@ export function ChampionList(){
         
         championList.forEach((champion)=>{
             champions.push(
-                <a href={`/champion/${champion.id}`} className="card py-4 col-12 card-border my-3 mx-5 noStyle" key={champion.id}>
+                <a href={`/champion/${champion.id}`} className="card py-4 col-12 card-border my-2 mx-5 noStyle" key={champion.id}>
                     <div className="card-body">
                         <p className="card-title ">Nom : <span className="championName d-flex justify-content-center">{champion.name}</span></p>
                         <p className="card-text">Titre : <span className="d-flex justify-content-center align-self-start">{champion.title}</span></p>
