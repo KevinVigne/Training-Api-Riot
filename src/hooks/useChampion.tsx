@@ -7,11 +7,14 @@ export function useChampion(id:string){
     const [championAlone , setChampion] = useState<Champion | null>(null);
 
     useEffect( ()=>{
-        if (!id) return;
+        //Si il n'y a pas d'id
+        if (!id){
+            return;
+        } 
         const getChampion = async() => {
             const CHAMPION_URL = `https://ddragon.leagueoflegends.com/cdn/15.23.1/data/fr_FR/champion/${id}.json`;
             try { 
-                //Requête Get API Riot pour récupérer le champion en question
+                //Requête Get API Riot pour récupérer le champion 
                 const championData = await axios.get(CHAMPION_URL);
                 const championObj = Object.values(championData.data.data)[0];
                 setChampion(championObj);
