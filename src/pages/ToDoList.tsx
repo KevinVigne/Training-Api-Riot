@@ -42,14 +42,14 @@ if(filter === "Tous"){
   filteredTodos = todos.filter((todo)=> todo.priority == filter)
 }
 
-const urgentCount = todos.filter((t)=> t.priority === "Urgente").length;
-const mediumCount = todos.filter((t)=> t.priority === "Moyenne").length;
-const lowCount = todos.filter((t)=> t.priority === "Basse").length;
-const totalCount = todos.length;
-const urgentButtonText = "Urgente ( "+ urgentCount +" )";
-const mediumButtonText = "Moyenne ( "+ mediumCount + " )";
-const lowButtonText = "Basse ( " + lowCount + " )";
-const totalButtonText = "Tous (" +totalCount+")";
+const urgentCount:number = todos.filter((t)=> t.priority === "Urgente").length;
+const mediumCount:number = todos.filter((t)=> t.priority === "Moyenne").length;
+const lowCount:number = todos.filter((t)=> t.priority === "Basse").length;
+const totalCount:number = todos.length;
+const urgentButtonText:string = "Urgente ( "+ urgentCount +" )";
+const mediumButtonText:string = "Moyenne ( "+ mediumCount + " )";
+const lowButtonText:string = "Basse ( " + lowCount + " )";
+const totalButtonText:string = "Tous (" +totalCount+")";
 const falseDisabled:boolean = false;
 
 

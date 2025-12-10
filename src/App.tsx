@@ -7,10 +7,10 @@ import { Champion } from "./pages/Champion.tsx"
 function App() {
   return (
     <BrowserRouter>
-      <nav className="d-flex row justify-content-center text-center">
-        <Link to="/" className="button py-3">Accueil</Link> 
-        <Link to="/taches" className="button py-3">Liste des Tâches</Link>
-        <Link to="/champions" className="button py-3" >Liste des Champions</Link>
+      <nav className="d-flex row justify-content-around text-center">
+        <Link to="/" className="button col-3 py-2 ">Accueil</Link> 
+        <Link to="/taches" className="button  col-3 py-2">Liste des Tâches</Link>
+        <Link to="/champions" className="button  col-3 py-2 " >Liste des Champions</Link>
       </nav>
 
       <Routes>
@@ -19,7 +19,7 @@ function App() {
         <Route path="/champions" element={<ChampionList />}/>
         <Route path={`/champion/:id`} element={<Champion />}/>
       </Routes>
-      </BrowserRouter>
+    </BrowserRouter>
   )
 }
 
