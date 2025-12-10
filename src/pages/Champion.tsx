@@ -9,7 +9,7 @@ export function Champion(){
 
     //Tant que le champion n'a pas  chargé
     if (!championAlone){
-        return <p>Chargement du Champion ...</p>;
+        return <h1 className="text d-flex justify-content-center py-4">Chargement du Champion ...</h1>;
     } 
 
     return(

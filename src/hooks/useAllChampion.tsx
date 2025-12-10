@@ -12,7 +12,7 @@ export function useAllChampions() {
             try {
                 const response = await axios.get(URL);
                 //Récupère les data 
-                const championList:Champion [] = Object.values(response.data.data)[0];
+                const championList:Champion [] = Object.values(response.data.data);
 
                 //Initialise  le tableau avec les valeur des data
                 setChampionList(championList);
@@ -24,5 +24,5 @@ export function useAllChampions() {
         getAllChampions();
     }, []);
 
-return  { championList };
+return   championList ;
 }

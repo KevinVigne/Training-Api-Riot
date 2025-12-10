@@ -16,7 +16,7 @@ export function useChampion(id:string){
             try { 
                 //Requête Get API Riot pour récupérer le champion 
                 const championData = await axios.get(CHAMPION_URL);
-                const championObj = Object.values(championData.data.data)[0];
+                const championObj:Champion = Object.values(championData.data.data)[0];
                 setChampion(championObj);
             } catch (error) {
                 console.log("Erreur lors du chargement du champion", error);
