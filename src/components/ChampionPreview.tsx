@@ -1,29 +1,31 @@
 import { useAllChampions } from "../hooks/useAllChampion";
 
-export function ChampionPreview(){
+export function ChampionPreview() {
     const championList = useAllChampions();
 
     return (
-        <>
+        <div className="championContainer">
             {championList.map((champion) => (
                 <a
                     href={`/champion/${champion.id}`}
-                    className="card py-4 col-12 card-border my-2 mx-5 noStyle"
+                    className="card card-border championCard noStyle"
                     key={champion.id}
                 >
-                    <img src={champion.image.full} alt="Image de " />
-                    <div className="card-body">
-                        <p className="card-title championName d-flex justify-content-center">
+                    <div className="card-body text-center">
+                        <p className="card-title championName mb-2">
                             {champion.name}
                         </p>
-                        <p className="card-text d-flex justify-content-center align-self-start">
-                            {champion.title}
-                        </p>
-                        <p className="card-text">{champion.blurb}</p>
+                        <img
+                            className="championImage mb-3"
+                            src={`https://ddragon.leagueoflegends.com/cdn/15.23.1/img/champion/${champion.image.full}`}
+                            alt={`Image de ${champion.name}`}
+                            width={110}
+                        />
+                        <p className="card-text">{champion.title}</p>
+                        <p className="card-text small">{champion.blurb}</p>
                     </div>
                 </a>
             ))}
-        </>
+        </div>
     );
-
 }

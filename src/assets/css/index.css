@@ -11,7 +11,6 @@
   text-rendering: optimizeLegibility;
 
   --body-color--:#1c041c;
-  --header_footer_color-- : #7285F2;
   --link_text--:#C7B0E2;
   --card_bg--: #094173;
   --card_text--:#C7B0E2;
@@ -29,16 +28,13 @@ body {
   place-items: center;
   font-family: 'AlegreyaSans';
 }
-
+.myNavbar{
+  background-color: var(--card_bg--);
+  color: var(--link_text--);
+}
 .title{
   color:var(--title_color--);
   font-family:'Merryweather' ;
-}
-
-.width-100{
-  padding: 0;
-  width: 100%;
-  margin: 0;
 }
 .link{
   color:var(--link_text--);
@@ -112,19 +108,6 @@ input::placeholder{
 input::placeholder:hover{
   background-color: var(--body-color--);
 }
-nav a {
-  font-weight: 700;
-  color: var(--link_text--);
-  background-color: var(--link_bg--);
-  text-decoration: inherit;
-  border:2px solid darkorchid;
-  
-}
-nav a:hover {
-  color: var(--link_text_hover--);
-  background-color: var(--link_bg_hover--);
-  
-}
 .addButton{
   border-radius: 5px;
   border-color: var(--card_text--) ;
@@ -141,3 +124,26 @@ nav a:hover {
   font-size: 25px;
 }
 
+.championContainer {
+  display: flex;
+  flex-wrap: wrap;           
+  justify-content: center;   
+  gap: 50px;                 
+  padding: 20px;
+}
+
+.championCard {
+  width: 300px;              
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.championCard:hover {
+  transform: translateY(-20px);
+}
+
+.championImage {
+  display: block;
+  margin: 0 auto;
+}
